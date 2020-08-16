@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de RG</title>
+	<link rel="stylesheet" type="text/css" href="estilos/global.css">
+	<link rel="stylesheet" type="text/css" href="estilos/formpesquisapdf.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/3116ec392f.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+</head>
+<body>
+
+<button id="deslogar">Deslogar</button>
+
+<div id="container">	
+	<header>
+		<div id="logo">
+			<button type="button" value="logout" id="deslogar" onclick="pergunta()" href='logout.php'>Logout</button>
+		<h6>SISRG</h6>
+		</div>
+		
+		<div id="btns">
+			<a href="cadastrorg.html">Cadastrar <i class="fas fa-plus-square"></i></a>
+			<a href="listar.html">Listar <i class="fas fa-clipboard-list"></i></a>
+			<a href="formpesquisa1.html">Pesquisa <i class="fas fa-search"></i></a>
+			<a href="#">Relatório <i class="fas fa-chart-pie"></i></a>
+
+		</div>
+			
+
+	</header>
+
+	
+
+<div id="main">
+
+	<h2 id="info">Relatório de agendamento</h2>
+	<form method="POST" action="pdf.php">
+		<div id="bloco1">
+			
+			<div>
+
+				<h4>Data de Agendamento Inicial</h4>
+				<input type="date" size="20" maxlength="15" name="dtinicio" id="dtinicio"  class="form-control"  >
+			</div>
+			<div>
+				<h4>Data de Agendamento Final</h4>
+				<input type="date" size="20" maxlength="15" name="dtfim" id="dtfim"  class="form-control"  >
+
+			</div>
+
+			<div>
+				<h4>Local de Agendamento</h4>
+				<select id="lagenda"  name="lagenda"  class="form-control">
+		     <option value=''></option>			
+			<option value=""></option>
+			<option value="SAC CAJAZEIRAS">SAC CAJAZEIRAS</option>
+			<option value="SAC PAU DA LIMA">SAC PAU DA LIMA</option>
+			<option value="SAC OUTROS">OUTROS</option>
+		  	</select>
+			</div>
+
+
+		</div>
+s
+
+		<input type="submit" class="envi" value="ENVIAR">
+
+	</form>
+
+
+
+<h2 id="info">Relatório de Reimpressão</h2>
+	<form method="POST" action="reimpressao.php">
+
+
+		<div id="bloco2">
+			<div>
+				<h4>Nome</h4>
+				<input type="text" id="nome" name="nome" class="form-control" placeholder="NOME DO SOLICITANTE">
+				
+			</div>
+
+			<div>
+				<h4>Mãe</h4>
+				<input type="text" id="mae" name="mae" class="form-control" placeholder="NOME DA MÃE">
+
+			</div>
+
+			<div>
+				<h4>Data Solic. inicial</h4>
+				<input type="date" size="20" maxlength="15" name="dtinicio" id="dtinicio"  class="form-control"  >
+				
+			</div>
+
+			<div>
+				<h4>Dat solic. Final</h4>
+				<input type="date" size="20" maxlength="15" name="dtfim" id="dtfim"  class="form-control"  >
+			</div>
+
+		</div>
+
+		<input type="submit" class="envi" value="ENVIAR">
+
+
+	</form>
+	
+
+
+</div>
+
+
+
+</body>
+</html>

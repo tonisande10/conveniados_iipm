@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Listar</title>
+	<link rel="stylesheet" type="text/css" href="estilos/global.css">
+	<link rel="stylesheet" type="text/css" href="estilos/listar.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/3116ec392f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<button id="deslogar">Deslogar</button>
+
+<div id="container">	
+	<header>
+		<div id="logo">
+			<button type="button" value="logout" id="deslogar" onclick="pergunta()" href='logout.php'>Logout</button>
+		<img src="estilos/logo.png" width="50px" style="padding-left: 5px">
+		</div>
+		
+		<div id="btns">
+			<a href="cadastrorg.html">Cadastrar <i class="fas fa-plus-square"></i></a>
+			<a href="listar.html">Listar <i class="fas fa-clipboard-list"></i></a>
+			<a href="formpesquisa1.html">Pesquisa <i class="fas fa-search"></i></a>
+			<a href="#">Relatório <i class="fas fa-chart-pie"></i></a>
+
+		</div>
+			
+
+	</header>
+
+	<h2 id="info">PESQUISA DE SITUAÇÃO DO RG</h2>
+
+	<div id="main">
+		
+		<table class="tabela">
+ <thead>
+ 	<tr>
+	 <th WIDTH=20>ID</th>
+	 <th WIDTH=100 >DATA</th>
+	 <th WIDTH=100 >ÓRGÃO</th>
+	 <th WIDTH=250>NOME</th>
+	 <th WIDTH=100>RG</th>
+	 <th WIDTH=100 >TELEFONE1</th>
+	 <th WIDTH=100>STATUS</th>
+	 <th WIDTH=50>LOCAL AGEND.</th>
+	 <th WIDTH=50>DATA AGEND.</th>
+	 <th WIDTH=50>HORA AGEND.</th>
+	 <th WIDTH=50>USUÁRIO.</th>
+	 <th WIDTH=50>RES..</th>
+	 <th WIDTH=50>EDITAR</th>
+ 	</tr>
+ </thead>
+
+
+ <tr><td>1</td>	<td>2020-04-24</td><td> </td><td>ANTONIO OLIVEIRA</td><td>	</td>	<td>	</td><td>	</td><td>	</td><td>0000-00-00</td><td>00:00:00</td><td>sande</td><td>	</td><td><a href='form_alteracao.php?id=1'>Editar</a></td>	
+
+
+</table>
+
+	</div>
+
+
+</div>
+	
+
+
+
+</body>
+</html>

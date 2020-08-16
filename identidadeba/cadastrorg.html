@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de RG</title>
+	<link rel="stylesheet" type="text/css" href="estilos/global.css">
+	<link rel="stylesheet" type="text/css" href="estilos/cadastrorg.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script src="https://kit.fontawesome.com/3116ec392f.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+	<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+</head>
+<body>
+
+
+	
+
+
+<div id="container">	
+	<header>
+		<div id="logo">
+			<button type="button" value="logout" id="deslogar" onclick="pergunta()" href='logout.php'>Logout</button>
+		<h6>SISRG</h6>
+		</div>
+		
+		<div id="btns">
+			<a href="cadastrorg.html">Cadastrar <i class="fas fa-plus-square"></i></a>
+			<a href="listar.html">Listar <i class="fas fa-clipboard-list"></i></a>
+			<a href="formpesquisa1.html">Pesquisa <i class="fas fa-search"></i></a>
+			<a href="#">Relatório <i class="fas fa-chart-pie"></i></a>
+
+		</div>
+			
+
+	</header>
+
+	<h2 id="info">Cadastro de RG</h2>
+
+<div id="main">
+
+	<form method="post" action="processarc.php">
+
+	<div id="bloco1">
+		<div>
+				<h4>Nome</h4>
+				<input id="nome" type="text" size="60" name="nome" placeholder="Nome completo" >
+		</div>
+		<div>
+			<h4>Pai</h4>
+			<input type="text" id="pai" size="60" name="pai" placeholder="Nome do Pai">
+		</div>
+		<div>
+			<h4>Mãe</h4>
+			<input type="text" id="mae" size="60" name="mae" placeholder="Nome da mãe">	
+		</div>	
+
+		<div>
+			<h4>RG</h4>
+			<input type="text" size="15" maxlength="15 "name="rg" id="rg">			
+		</div>
+	</div>
+
+	<div id="bloco2">
+		
+		<div>
+			<h4>Nascimento</h4>
+			<input type="date" size="10" maxlength="10" id="dtnascimento" name="dtnascimento" placeholder="dt_registro">			
+		</div>
+		<div>
+			<h4>CPF</h4>
+			<input type="text" name="cpf" id="cpf"size="12" maxlength="14"name="cpf" onkeydown="javascript: fMasc( this, mCPF );"> 			
+		</div>	
+		<div>
+				<h4>Solicitante</h4>
+		<select id="solicitante" name="solicitante" >
+		    <option value=""></option>
+			<option value="DEFENSORIA">DEFENSORIA</option>
+		    <option value="MP-BA">MP-BA</option>
+		    <option value="SJDHDS">SJDHDS</option>
+		    <option value="OUTROS">OUTROS</option>
+		</select>
+
+		</div>
+
+		<div>
+			<h4>Motivo</h4>
+			<select name="motivo">
+			   <option value=""></option>
+			    <option value="1ª VIA">AUXILIO EMERGENCIAL</option>
+			    <option value="2ª VIA">OUTROS</option>
+			</select>
+		</div>
+
+		<div>
+			<h4>Data de solicitação</h4>
+			<input type="date" size="20" maxlength="15" name="dtsol" id="dtsol" >	
+		</div>
+
+	</div>
+
+	<div id="bloco3">
+		
+		<div>
+			<h4>Usuário</h4>
+			<input type="text" size="20" maxlength="15" id="usuario" readonly=“true” name="usuario" value= "sande" >		
+		</div>
+		<div>
+			
+		<h4>Natural do Estado</h4>
+		<input type="text" size="25" maxlength="25" id="estadon" name="estadon" placeholder="Estado" >
+		</div>
+		<div>
+		<h4>Natural do Cidade</h4>
+		<input type="text" size="20" maxlength="20" id="cidaden" name="cidaden" placeholder="Cidade" >
+
+		</div>
+
+		<div>
+			<h4>Telefone 1</h4>
+		<input type="text" id="telefone1" size="12" maxlength="14" name="telefone1" placeholder="insira o tel" onkeydown="javascript: fMasc( this, mTel );">
+		</div>
+
+	</div>
+
+	<div id="bloco4">
+		
+		<div>
+			
+			<h4>Telefone 2</h4>
+		<input type="text" id="telefone2" size="12" maxlength="14" name="telefone2" placeholder="insira o tel" onkeydown="javascript: fMasc( this, mTel );">
+
+		</div>
+
+		<div>
+			<h4>Telefone 3</h4>
+		<input type="text" id="telefone3" size="12" maxlength="14" name="telefone3" placeholder="insira o tel" onkeydown="javascript: fMasc( this, mTel );">
+
+		</div>
+
+		<div>
+			<h4>Whatsapp</h4>
+		<input type="text" id="whatsaap" size="12" maxlength="14" name="whatsaap" placeholder="insira o zap" onkeydown="javascript: fMasc( this, mTel );">
+		</div>
+
+		<div>
+			
+
+		<h4>CEP</h4>
+		<input type="text" id="cep" size="12" maxlength="14" name="cep" >
+		</div>
+
+		
+
+	</div>
+
+	<div id="bloco5">
+
+		<div>
+			<h4>Estado</h4>
+		<input type="text" id="estador" size="12" maxlength="14" name="estador" >
+		
+		</div>
+
+		
+		<div>
+			
+		<h4>Endereço Residencial</h4>
+		<input id="end" name="end" type="text" size="60" name="end" placeholder="Endereço" >
+
+		</div>
+		
+		<div>
+			<h4>Cidade da residência</h4>
+		<input type="text" id="cidader" size="30" maxlength="30" name="cidader" >
+		</div>
+		<div>
+			<h4>STATUS</h4>
+			<select id="status" readonly=“true” name="status" onkeyup="javascript:travarCampoSelect(obj);" readonly="readonly" option value="">
+		     <option value=""></option>
+			 <option value="REIMP. RET. SSA">POSSIB. REIMPRESSÃO COM RETIRADA SEC. JUSTIÇA</option>
+		    <option value="REIMP ENVIO CORREIO">POSSIB. REIMPRESSÃO E ENVIO PARA CONVENIADO INTERIOR</option>
+		    <option value="AGENDAM P/ AT. PRESENCIAL.">AGENDADO. P/ ATEND. PRESENCIAL SALVADOR</option>
+			 <option value="PENDENTE P/ AT. PRESENCIAL">AGUARDANDO. P/ ATEND. PRESENCIAL INTERIOR</option>
+			 <option value="LIGAR SAC P/ RETIRAR DOC.">FEZ CARTEIRA RECENTE / LIGAR PARA SAC </option>
+			 <option value="CARTEIRA ENTREGUE A SEC.JUSTIÇA.">CARTEIRA ENTREGUE A SEC. DE JUSTIÇA</option>
+			 <option value="CARTEIRA ENTREUGE AO CIDADÃO">CARTEIRA ENTREGUE AO CIDADÃO</option>
+			<option value="AG. ANÁLISE POSTERIOR">AGUARDANDO ANÁLISE POSTERIOR</option>
+		  	</select>
+		</div>
+
+		<div>
+			<h4>Local do agendamento</h4>
+		<select id="lagenda"  name="lagenda"   >
+		     <option value="">Selecione algum</option>
+			<option value="SAC CAJAZEIRAS">SAC CAJAZEIRAS</option>
+			<option value="SAC CAJAZEIRAS">SAC CAJAZEIRAS</option>
+			<option value="SAC PAU DA LIMA">SAC PAU DA LIMA</option>
+			<option value="SAC OUTROS">OUTROS</option>
+		  	</select>
+		</div>
+		<div>
+			<h4>Data do agendamento</h4>
+		<input type="date" size="20" maxlength="15" name="dagenda" id="dagenda" >
+		</div>
+
+		
+
+	</div>
+	<div id="bloco7">
+		<div>
+			<h4>Hora do agendamento</h4>
+		<input type="time" size="20" maxlength="15" name="Hangeda" id="Hagenda"  class="datav" >
+		</div>
+		<div>
+			<h4>Resolvido</h4>
+		<select id="resolvido"  name="resolvido"   >
+		     <option value=""></option>
+			<option value="NAO">NAO</option>
+			<option value="SIM">SIM</option>
+			
+		  	</select>
+		</div>
+		
+	</div>
+
+	<div>
+			<h4>Observações</h4>
+		 <textarea id="obsserva" rows="5" cols="30" name="observa" size="60" maxlength="190">
+		 </textarea>
+
+	</div>
+	
+	<div id="botoes">
+	<button type="submit" value="Cadastrar" class="cadastro">Cadastrar</button>
+
+	<input type="button" value="voltar" class="back" onclick="voltar()" href='abertura.php'>
+	</div>
+	
+
+	</form>
+
+
+</div>
+
+<script type="text/javascript">
+	
+
+
+function voltar() {
+
+    if (confirm("Deseja realmente sair do programa?")) {
+        location.href="abertura.php";
+    } else {
+        return false;
+    }
+}
+
+
+function pergunta() {
+
+    if (confirm("Deseja realmente sair do programa?")) {
+        location.href="index.html";
+    } else {
+        return false;
+    }
+}
+
+function fMasc(objeto,mascara) {
+				obj=objeto
+				masc=mascara
+				setTimeout("fMascEx()",1)
+			}
+			function fMascEx() {
+				obj.value=masc(obj.value)
+			}
+			function mTel(tel) {
+				tel=tel.replace(/\D/g,"")
+				tel=tel.replace(/^(\d)/,"($1")
+				tel=tel.replace(/(.{3})(\d)/,"$1)$2")
+				if(tel.length == 9) {
+					tel=tel.replace(/(.{1})$/,"-$1")
+				} else if (tel.length == 10) {
+					tel=tel.replace(/(.{2})$/,"-$1")
+				} else if (tel.length == 11) {
+					tel=tel.replace(/(.{3})$/,"-$1")
+				} else if (tel.length == 12) {
+					tel=tel.replace(/(.{4})$/,"-$1")
+				} else if (tel.length > 12) {
+					tel=tel.replace(/(.{4})$/,"-$1")
+				}
+				return tel;
+			}
+			function mCNPJ(cnpj){
+				cnpj=cnpj.replace(/\D/g,"")
+				cnpj=cnpj.replace(/^(\d{2})(\d)/,"$1.$2")
+				cnpj=cnpj.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")
+				cnpj=cnpj.replace(/\.(\d{3})(\d)/,".$1/$2")
+				cnpj=cnpj.replace(/(\d{4})(\d)/,"$1-$2")
+				return cnpj
+			}
+			function mCPF(cpf){
+				cpf=cpf.replace(/\D/g,"")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+				return cpf
+			}
+			function mCEP(cep){
+				cep=cep.replace(/\D/g,"")
+				cep=cep.replace(/^(\d{2})(\d)/,"$1.$2")
+				cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
+				return cep
+			}
+			function mNum(num){
+				num=num.replace(/\D/g,"")
+				return num
+			}
+			function mPis(v) {
+    v = v.replace(/\D/g, "")                                      //Remove tudo o que não é dígito
+    v = v.replace(/^(\d{3})(\d)/, "$1.$2")                        //Coloca ponto entre o terceiro e o quarto dígitos
+    v = v.replace(/^(\d{3})\.(\d{5})(\d)/, "$1.$2.$3")            //Coloca ponto entre o quinto e o sexto dígitos
+    v = v.replace(/(\d{3})\.(\d{5})\.(\d{2})(\d)/, "$1.$2.$3.$4") //Coloca ponto entre o décimo e o décimo primeiro dígitos
+    return v
+}
+
+
+$(document).ready(function () {
+		
+			$.getJSON('estados_cidades.json', function (data) {
+				var items = [];
+				var options = '<option value="">escolha um estado</option>';	
+				$.each(data, function (key, val) {
+					options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+				});					
+				$("#estados").html(options);				
+				
+				$("#estados").change(function () {				
+				
+					var options_cidades = '';
+					var str = "";					
+					
+					$("#estados option:selected").each(function () {
+						str += $(this).text();
+					});
+					
+					$.each(data, function (key, val) {
+						if(val.nome == str) {							
+							$.each(val.cidades, function (key_city, val_city) {
+								options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+							});							
+						}
+					});
+					$("#cidades").html(options_cidades);
+					
+				}).change();		
+			
+			});
+		
+		});
+		
+		</script>
+		<script>
+		
+		//trava o campo select pois não permite que seu valor seja alterado
+function travarCampoSelect(obj){
+var index = obj.selectedIndex;
+obj.onkeypress=function() {
+obj.options[index].selected = true;
+return false;
+};
+obj.onclick=function() {
+obj.options[index].selected = true;
+return false;
+};
+obj.onchange=function() {
+obj.options[index].selected = true;
+return false;
+};
+}
+
+
+
+</script>
+	
+
+
+
+</body>
+</html>
